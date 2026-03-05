@@ -1,4 +1,4 @@
 locals{
-    project = "Roboshop"
+    project = "roboshop"
     environment = "dev"
 }
