@@ -1,0 +1,8 @@
+locals{
+    project = "roboshop"
+    environment = "dev"
+    bastion_sg_id= data.aws_ssm_parameter.bastion_id.value
+    mongo_sg_id= data.aws_ssm_parameter.mongodb_id.value
+    catalogue_sg_id= data.aws_ssm_parameter.catalogue_id.value
+    user_sg_id= data.aws_ssm_parameter.user_id.value
+}
