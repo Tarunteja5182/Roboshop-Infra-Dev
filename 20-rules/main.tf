@@ -57,3 +57,13 @@ resource "aws_security_group_rule" "mysql_Bastion" {
   source_security_group_id = local.bastion_sg_id
   security_group_id = local.mysql_sg_id
 }
+
+resource "aws_security_group_rule" "rabbitmq_Bastion" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  #cidr_blocks       = ["0.0.0.0/0"]
+  source_security_group_id = local.bastion_sg_id
+  security_group_id = local.rabbitmq_sg_id
+}
