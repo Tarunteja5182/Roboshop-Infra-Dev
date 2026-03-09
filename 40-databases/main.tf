@@ -15,7 +15,7 @@ resource "terraform_data" "bootstrap" {
        type     = "ssh"
        user     = local.rm_user
        password = local.rm_pwd
-       host     = aws_instance.mongo.private_id
+       host     = aws_instance.mongo.private_ip
    }
   
   provisioner "file"{
