@@ -18,7 +18,7 @@ data "aws_ami" "joindevops" {
   }
 }
 
-data "aws_ssm_parameter" "mongo_subnet_id"{
+data "aws_ssm_parameter" "database_subnet_id"{
     name = "/${local.project}/${local.environment}/database_subnet_id"
 }
 
@@ -26,7 +26,10 @@ data "aws_ssm_parameter" "mongo_sg_id"{
     name= "/${local.project}/${local.environment}/mongodb"
 }
 
-
 data "aws_ssm_parameter" "redis_sg_id"{
-    name= "/${local.project}/${local.environment}/mongodb"
+    name= "/${local.project}/${local.environment}/reddis"
+}
+
+data "aws_ssm_parameter" "mysql_sg_id"{
+    name= "/${local.project}/${local.environment}/mysql"
 }
