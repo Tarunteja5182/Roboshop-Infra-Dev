@@ -7,9 +7,9 @@ locals{
     redis_sg_id = data.aws_ssm_parameter.redis_sg_id.value
     mysql_sg_id = data.aws_ssm_parameter.mysql_sg_id.value
     iam_role_name = join ("-"
-    ,[for (name in ["${local.project}","${local.environment}","mysql"] : title(name))])
+    ,[for name in ["${local.project}","${local.environment}","mysql"] : title(name)])
     iam_policy_name = join (""
-    ,[for (name in ["${local.project}","${local.environment}","mysql"] : title(name))])
+    ,[for name in ["${local.project}","${local.environment}","mysql"] : title(name)])
     rm_user= "ec2-user"
     rm_pwd="DevOps321"
     common_tags ={
@@ -18,3 +18,4 @@ locals{
         environment = "dev"
     }
 }
+
