@@ -1,5 +1,5 @@
 resource "aws_instance" "mongo"{
-    ami_id = local.ami_id
+    ami = local.ami_id
     instance_type = "t3.micro"
     subnet_id = local.mongo_subnet_id
     vpc_security_group_ids = [local.mongo_sg_id]
