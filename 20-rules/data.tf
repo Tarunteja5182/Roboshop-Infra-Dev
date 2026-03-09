@@ -17,3 +17,8 @@ data "aws_ssm_parameter" "user_id" {
 data "aws_ssm_parameter" "redis_id" {
   name = "/${local.project}/${local.environment}/redis"
 }
+
+
+data "aws_ssm_parameter" "mysql_id" {
+  name = "/${local.project}/${local.environment}/mysql"
+}
