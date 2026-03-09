@@ -25,3 +25,8 @@ data "aws_ssm_parameter" "mongo_subnet_id"{
 data "aws_ssm_parameter" "mongo_sg_id"{
     name= "/${local.project}/${local.environment}/mongodb"
 }
+
+
+data "aws_ssm_parameter" "redis_sg_id"{
+    name= "/${local.project}/${local.environment}/mongodb"
+}
