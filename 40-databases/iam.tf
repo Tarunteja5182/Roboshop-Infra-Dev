@@ -22,7 +22,7 @@ resource "aws_iam_role" "mysql" {
     {
       Name = "${local.project}-${local.environment}-mysql"
     }
-    )
+  )
   
 }
 
