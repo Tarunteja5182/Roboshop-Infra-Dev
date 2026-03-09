@@ -13,3 +13,7 @@ data "aws_ssm_parameter" "catalogue_id" {
 data "aws_ssm_parameter" "user_id" {
   name = "/${local.project}/${local.environment}/user"
 }
+
+data "aws_ssm_parameter" "redis_id" {
+  name = "/${local.project}/${local.environment}/redis"
+}

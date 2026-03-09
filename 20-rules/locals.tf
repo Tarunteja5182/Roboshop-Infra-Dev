@@ -5,4 +5,5 @@ locals{
     mongo_sg_id= data.aws_ssm_parameter.mongodb_id.value
     catalogue_sg_id= data.aws_ssm_parameter.catalogue_id.value
     user_sg_id= data.aws_ssm_parameter.user_id.value
+    redis_sg_id= data.aws_ssm_parameter.redis_id.value
 }

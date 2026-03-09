@@ -37,3 +37,13 @@ resource "aws_security_group_rule" "Monogodb_User" {
   source_security_group_id = local.user_sg_id
   security_group_id = local.mongo_sg_id
 }
+
+resource "aws_security_group_rule" "redis_Bastion" {
+  type              = "ingress"
+  from_port         = 22
+  to_port           = 22
+  protocol          = "tcp"
+  #cidr_blocks       = ["0.0.0.0/0"]
+  source_security_group_id = local.bastion_sg_id
+  security_group_id = local.redis_sg_id
+}
