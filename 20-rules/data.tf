@@ -26,3 +26,8 @@ data "aws_ssm_parameter" "mysql_id" {
 data "aws_ssm_parameter" "rabbitmq_id" {
   name = "/${local.project}/${local.environment}/rabbitmq"
 }
+
+data "aws_ssm_parameter" "backend_alb_id" {
+  name = "/${local.project}/${local.environment}/backend_alb"
+}
+
