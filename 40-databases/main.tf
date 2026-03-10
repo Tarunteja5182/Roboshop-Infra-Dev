@@ -70,7 +70,7 @@ resource "aws_instance" "mysql"{
     iam_instance_profile = aws_iam_instance_profile.mysql.name
      tags = merge(local.common_tags,
   {
-    Name = "${local.project}-${local.environment}-redis"
+    Name = "${local.project}-${local.environment}-mysql"
   } 
   )
 }
