@@ -1,8 +1,8 @@
 resource "aws_instance" "catalogue"{
     ami = locals.ami_id
     type = "t3.micro"
-    subnet_id = 
-    vpc_securitygroup_ids=[]
+    subnet_id = local.private_subnet_id
+    vpc_security_group_ids=[local.catalogue_sg_id]
 
     tags = merge(local.commontags,{
         Name = "${local.project}-${local.environment}-catalogue"
