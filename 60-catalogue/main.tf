@@ -22,13 +22,13 @@ resource "terraform_data" "bootstrap_catalogue"{
   
   provisioner "file" {
   source      = "bootstrap.sh"
-  destination = "/tmp/bootstrap.conf"
+  destination = "/tmp/bootstrap.sh"
   }
 
 provisioner "remote-exec" {
     inline = [
                "chmod +X /tmp/bootstrap.sh",
-               "sudo sh /tmp/bootstrap-cluster.sh catalogue"
+               "sudo sh /tmp/bootstrap.sh catalogue"
     ]
   }
 
