@@ -19,9 +19,9 @@ data "aws_ami" "joindevops" {
 }
 
 data "aws_ssm_parameter" "catalogue_sg_id"{
-    value = "/${local.project}/${local.environment}/catalogue"
+    name = "/${local.project}/${local.environment}/catalogue"
 }
 
 data "aws_ssm_parameter" "private_subnet_ids"{
-    value = "/${local.project}/${local.environment}/private_subnet_id"
+    name = "/${local.project}/${local.environment}/private_subnet_id"
 }
