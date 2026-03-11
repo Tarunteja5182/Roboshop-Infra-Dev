@@ -38,6 +38,7 @@ provisioner "remote-exec" {
 resource "aws_ec2_instance_state" "catalogue_stop" {
   instance_id = aws_instance.catalogue.id
   state       = "stopped"
+  depends_on = [terraform_data.bootstrap_catalogue]
 }
 
 resource "aws_ami_from_instance" "example" {
