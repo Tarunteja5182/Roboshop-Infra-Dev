@@ -4,7 +4,7 @@ resource "aws_instance" "catalogue"{
     subnet_id = local.private_subnet_id
     vpc_security_group_ids=[local.catalogue_sg_id]
 
-    tags = merge(local.commontags,{
+    tags = merge(local.common_tags,{
         Name = "${local.project}-${local.environment}-catalogue"
     }
     )
