@@ -1,9 +1,9 @@
 variable "zone_id"{
-    type = "string"
+    type = string
     default = "Z0994037IHVPKSSQRAUE"
 }
 
 variable "domain_name"{
-    type = "string"
+    type = string
     default = "mbops.online"
 }
