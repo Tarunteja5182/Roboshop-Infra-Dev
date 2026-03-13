@@ -69,7 +69,7 @@ resource "aws_lb_target_group" "catalogue" {
     interval = 20
     path = "/health"
     matcher = "200-299"
-    protocol = "http"
+    protocol = "HTTP"
     port = 8080
     timeout =5
     unhealthy_threshold = 2 
