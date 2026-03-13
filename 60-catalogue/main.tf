@@ -187,7 +187,7 @@ resource "aws_lb_listener_rule" "catalogue" {
 
   condition {
     host_header {
-      values = ["catalogue.backend_alb-${local.environment}.${var.domain_name}"]
+      values = ["catalogue.${local.project}-${local.environment}-backend-alb.${var.domain_name}"]
     }
   }
 }
