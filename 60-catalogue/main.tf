@@ -139,7 +139,7 @@ timeouts {
     delete = "15m"
   }
 
-  dynamic tags{
+  dynamic tag{
    for_each = merge(
       {
       Name = "${local.project}-${local.environment}-catalogue"
@@ -147,8 +147,8 @@ timeouts {
       local.common_tags)
                 
      content{
-        key                 = tags.key
-        value               = tags.value
+        key                 = tag.key
+        value               = tag.value
         propagate_at_launch = true
     }           
   }
