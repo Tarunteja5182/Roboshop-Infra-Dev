@@ -25,3 +25,11 @@ data "aws_ssm_parameter" "catalogue_sg_id"{
 data "aws_ssm_parameter" "private_subnet_ids"{
     name = "/${local.project}/${local.environment}/private_subnet_id"
 }
+
+data "aws_ssm_parameter" "vpc_id"{
+  name = "/${local.project}/${local.environment}/vpc_id"
+}
+
+data "aws_ssm_parameter" "listener_arn"{
+  name = "/${local.project}/${local.environment}/backend_alb_listener_arn"
+}
