@@ -67,7 +67,7 @@ resource "aws_lb_target_group" "catalogue" {
   health_check{
     healthy_threshold = 2
     interval = 20
-    path = /health
+    path = "/health"
     matcher = "200-299"
     protocol = "http"
     port = 8080
@@ -94,7 +94,8 @@ resource "aws_launch_template" "catalogue" {
       Name = "${local.project}-${local.environment}-catalogue"
       },
       local.common_tags)
-
+  }
+  tag_specifications {
     resource_type = "volume"
 
     tags = merge(
@@ -119,7 +120,6 @@ resource "aws_autoscaling_group" "catalogue" {
   desired_capacity          = 1
 
   vpc_zone_identifier       = [local.private_subnet_id]
-  health_check_grace_period = 120
   target_group_arns         = [aws_lb_target_group.catalogue.arn]
   
   launch_template {
@@ -191,7 +191,7 @@ resource "aws_lb_listener_rule" "catalogue" {
 }
 
 resource "terraform_data" "catalogue_delete"{
-  depends_on = aws_autoscaling_policy.catalogue
+  depends_on = [aws_autoscaling_policy.catalogue]
   provisioner local_exec {
       command = "aws ec2 terminate-instances – instance-ids ${aws_instance.catalogue.id}"
   }
