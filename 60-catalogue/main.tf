@@ -60,7 +60,7 @@ resource "aws_lb_target_group" "catalogue" {
   name     = "${local.project}-${local.environment}-catalogue"
   port     = 8080
   protocol = "HTTP"
-  target_type = "instances"
+  target_type = "instance"
   vpc_id   = local.vpc_id
   deregistration_delay = 60
 
