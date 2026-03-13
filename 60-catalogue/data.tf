@@ -31,5 +31,5 @@ data "aws_ssm_parameter" "vpc_id"{
 }
 
 data "aws_ssm_parameter" "listener_arn"{
-  name = "/${local.project}/${local.environment}/backend_alb_listener_arn"
+  name = "/${local.project}/${local.environment}/back_end_listener_arn"
 }
