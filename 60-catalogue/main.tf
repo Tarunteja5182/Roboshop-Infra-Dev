@@ -124,7 +124,7 @@ resource "aws_autoscaling_group" "catalogue" {
   
   launch_template {
     id      = aws_launch_template.catalogue.id
-    version = "$latest"
+    version = "$Latest"
   }
 
    instance_refresh {
