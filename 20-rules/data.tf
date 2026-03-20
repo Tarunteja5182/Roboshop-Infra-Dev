@@ -31,3 +31,22 @@ data "aws_ssm_parameter" "backend_alb_id" {
   name = "/${local.project}/${local.environment}/backend_alb"
 }
 
+data "aws_ssm_parameter" "frontend_alb_id" {
+  name = "/${local.project}/${local.environment}/frontend_alb"
+}
+
+data "aws_ssm_parameter" "frontend_id" {
+  name = "/${local.project}/${local.environment}/frontend"
+}
+
+data "aws_ssm_parameter" "cart_id" {
+  name = "/${local.project}/${local.environment}/cart"
+}
+
+data "aws_ssm_parameter" "shipping_id" {
+  name = "/${local.project}/${local.environment}/shipping"
+}
+
+data "aws_ssm_parameter" "payment_id" {
+  name = "/${local.project}/${local.environment}/payment"
+}
