@@ -6,7 +6,6 @@ resource "aws_lb" "main" {
   subnets            = local.private_subnet_ids
 
   enable_deletion_protection = false
-
   
   tags =  merge(
      {
